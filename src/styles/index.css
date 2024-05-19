@@ -10,18 +10,57 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
-body{
+body {
     margin-top: 100px;
+    background-color: rgba(15, 8, 3, 0.321);
+    
 }
-ul{
+
+.container {
+    max-width: 650px;
+    background-color: rgba(141, 125, 187, 0.927);
+    border-radius: 5px;
+    border: 2px rgb(167, 153, 214);
+    padding: 10px;
+    border-style: ridge;
+}
+
+ul {
     padding: 0;
     margin-bottom: 0;
-}
-ul li {
-    border: 1px solid gray;
-    list-style: none ;
-    padding: 5px;
-}
-h1{text-align: center;}
 
-input{border: none; width: 100%;}
+}
+
+ul li {
+    border: 1px solid rgb(156, 143, 190);
+    border-radius: 10px;
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Courier New", monospace;
+    color: rgb(162, 152, 199);
+}
+
+input {
+    border: none;
+    width: 100%;
+    background-color: rgb(159, 144, 214);
+    opacity: 1.0;
+}
+
+.delete-icon {
+    display: none;
+    cursor: pointer; 
+    color: rgb(132, 131, 182);
+    margin-left: 10px;
+}
+
+.task-item:hover .delete-icon {
+    display: inline;
+}
