@@ -50,7 +50,7 @@ const Home = () => {
 						</ul>
 					</div>
 					<p>
-					{tasks.length + " Tasks"}
+					{tasks.length + " Item left"}
 					</p>			
 			</div>
 			<div className="stick"></div>
