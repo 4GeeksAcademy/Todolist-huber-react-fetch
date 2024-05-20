@@ -13,7 +13,8 @@
 body {
     margin-top: 100px;
     background-color: rgba(15, 8, 3, 0.321);
-    
+    display: flex;
+    justify-content: center;
 }
 
 .container {
@@ -31,6 +32,11 @@ ul {
 
 }
 
+li.containerLi{
+    font-size: 20px;
+    font-family: "Courier New", monospace,;
+}
+
 ul li {
     border: 1px solid rgb(156, 143, 190);
     border-radius: 10px;
@@ -42,11 +48,17 @@ ul li {
 }
 
 h1 {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     font-size: 5rem;
     margin-top: 5rem;
     font-family: "Courier New", monospace;
     color: rgb(34, 28, 56);
+}
+
+.list {
+    width: 40rem;
 }
 
 input {
@@ -64,18 +76,36 @@ p {
     margin-bottom: 0%;
     padding: 2px;
     font-size: 13px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Courier New", monospace;
     color: #313586;
 }
-
-
-.delete-icon {
-    display: none;
-    cursor: pointer; 
-    color: rgb(0, 0, 0);
-    margin-left: 10px;
+.stick {
+    background-color: rgb(156, 143, 190);
+    width: 39rem;
+    height: 5px;
+    border: 1px solid rgb(138, 127, 168);
+    border-top: 0;
+    margin-left: 8px;
 }
 
-.task-item:hover .delete-icon {
-    display: inline;
+.stick2 {
+    background-color: rgb(156, 143, 190);
+    width: 38rem;
+    height: 5px;
+    border: 1px solid rgb(138, 127, 168);
+    border-top: 0;
+    margin-left: 16px;
 }
+
+li.containerLi{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.containerLi button {
+    color:  rgb(156, 143, 190);
+    transition: color 0.5s;
+}
+
+.containerLi:hover button{
+    color: black;
+  }
