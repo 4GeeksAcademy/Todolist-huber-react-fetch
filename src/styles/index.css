@@ -33,13 +33,13 @@ ul {
 }
 
 li.containerLi{
-    font-size: 20px;
+    font-size: 10px;
     font-family: "Courier New", monospace,;
 }
 
 ul li {
     border: 1px solid rgb(156, 143, 190);
-    border-radius: 10px;
+    border-radius: 8px;
     list-style: none;
     padding: 10px;
     display: flex;
@@ -58,7 +58,7 @@ h1 {
 }
 
 .list {
-    width: 40rem;
+    width: 39rem;
 }
 
 input {

@@ -13,7 +13,7 @@ const Home = () => {
 			<div className="container">
 					<div className="list">
 						<ul>
-							<li key={tasks.id}>
+							<li>
 								<input 
 								type="text" 
 								placeholder="Write your task here"
