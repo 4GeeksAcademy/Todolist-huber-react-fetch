@@ -45,7 +45,7 @@ export const Fetch = () => {
     try {
       console.log(todo);
       const responseAddTaks = await fetch(
-        "https://playground.4geeks.com/todo/users/hubs0",
+        "https://playground.4geeks.com/todo/todos/hubs0",
         {
           method: "POST",
           body: JSON.stringify(todo),
