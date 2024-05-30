@@ -1,12 +1,114 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+export const Fetch = () => {
+  const [inputValue, setInputValue] = useState("");
+  const [tasks, setTasks] = useState([]);
 
-//create your first component
-const Home = () => {
-	const [inputValue, setInputValue] = useState("")
-	const [tasks, setTasks] = useState([]); 
+  const sincronizar = async () => {
+    try {
+      const response = await fetch(
+        "https://playground.4geeks.com/todo/users/hubs0"
+      );
+
+      if (response.ok == false) {
+        throw new Error("Levante un error");
+      }
+
+      const data = await response.json();
+      setTasks(data.todos); 
+    } catch (error) {
+      console.log("cath error: ", error);
+    }
+  };
+  const getUserAgain = async () => {
+    try {
+      const response = await fetch(
+        "https://playground.4geeks.com/todo/users/hubs0",
+        {
+          method: "POST",
+          body: JSON.stringify([]),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.ok == false) {
+        throw new Error("Levante un error");
+      }
+    } catch (error) {
+      console.log("cath error: ", error);
+    }
+  };
+
+  const addTask = async (todo) => {
+    try {
+      console.log(todo);
+      const responseAddTaks = await fetch(
+        "https://playground.4geeks.com/todo/users/hubs0",
+        {
+          method: "POST",
+          body: JSON.stringify(todo),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+	  if (responseAddTaks.ok == false) {
+        throw new Error("Levante un error en addTasks");
+      }
+
+      const dataAddTasks = await responseAddTaks.json();
+      setTasks([...tasks, dataAddTasks]);
+    } catch (error) {
+      console.log("cath error addTaks: ", error);
+    }
+  };
+  const eliminarTask = async (id) => {
+    try {
+      const responseDeleteTask = await fetch(
+        "https://playground.4geeks.com/todo/todos/" + id,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (responseDeleteTask.ok == false) {
+        throw new Error("Levante un error en deleteTask");
+      }
+    } catch (error) {
+      console.log("cath error deleteTask: ", error);
+    }
+  };
+  const clearTasks = async () => {
+    try {
+      const responseClearTask = await fetch(
+        "https://playground.4geeks.com/todo/users/hubs0",
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (responseClearTask.ok == false) {
+        throw new Error("Levante un error en clearTask");
+      }
+
+      setTasks([]);
+      getUserAgain();
+    } catch (error) {
+      console.log("error del clearTask: ", error);
+    }
+  };
+
+  useEffect(() => {
+    sincronizar();
+  }, []);
 	return (
 		<React.Fragment>
 				<h1>My Todos</h1>
