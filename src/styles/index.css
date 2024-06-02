@@ -105,3 +105,9 @@ p {
 .containerLi:hover button{
     color: rgb(32, 22, 58);
   }
+  .buttonDeleteAll {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
