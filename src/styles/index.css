@@ -34,7 +34,7 @@ ul {
 
 li.containerLi{
     font-size: 20px;
-    font-family: "Courier New", monospace,;
+    font-family: "Courier New", monospace;
 }
 
 ul li {
@@ -96,16 +96,12 @@ p {
     border-top: 0;
     margin-left: 16px;
 }
-
-li.containerLi{
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-}
 .containerLi button {
-    color:  rgb(156, 143, 190);
+    border: 1px rgba(108, 108, 136, 0.927);
+    background-color: transparent;
+    color:  rgba(108, 108, 136, 0.927);
     transition: color 0.5s;
 }
-
 .containerLi:hover button{
-    color: black;
+    color: rgb(32, 22, 58);
   }
